@@ -1,0 +1,29 @@
+<h1>Please enter a new recipe:</h1>
+
+<%= form_for(@recipe) do |f| %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :ingredients %><br>
+    <%= f.text_field :ingredients %>
+  </div>
+  <div class="field">
+    <%= f.label :directions %><br>
+    <%= f.text_field :directions %>
+  </div>
+  <div class="field">
+    <%= f.label :prep_time %><br>
+    <%= f.text_field :prep_time %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

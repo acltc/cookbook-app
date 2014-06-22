@@ -1,0 +1,5 @@
+<h1>Welcome to Cookbook.ly! Here are the recipes:</h1>
+<% @recipes.each do |recipe| %>
+  <h4><a href="#"><%= recipe.title %></a><span style="font-weight: normal;"> By: <%= recipe.author %></span></h4>
+  
+<% end %>

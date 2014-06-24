@@ -2,6 +2,10 @@
 <p>By: <%= @recipe.author %></p>
 <h3>Prep Time: <%=@recipe.prep_time %></h3>
 <h2>Ingredients:</h2>
-<p><%= @recipe.ingredients %></p>
+<ul>
+  <% @recipe.ingredient_list.each do |ingredient| %>
+    <li><%= ingredient %></li>
+  <% end %>
+</ul>
 <h2>Directions:</h2>
 <p><%= @recipe.directions %></p>

@@ -1,7 +1,7 @@
 <h1>Welcome to Cookbook.ly! Here are the recipes:</h1>
 <% @recipes.each do |recipe| %>
   
-  <h4><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a><span style="font-weight: normal;"> By: <%= recipe.author %></span></h4>
+  <h4><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a><span style="font-weight: normal;"> By: <%= recipe.author_initials %></span></h4>
   <a data-confirm="Are you sure?" data-method="delete" href="<%= "/recipes/#{recipe.id}"%>" rel="nofollow">Destroy</a>
   
   

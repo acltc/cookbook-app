@@ -1,7 +1,7 @@
 <h1><%= @recipe.title %></h1>
 <p>By: <%= @recipe.author %></p>
 <p>Created: <%= @recipe.friendly_created_at %>, Updated: <%= @recipe.friendly_updated_at %></p>
-<img src="<%= @recipe.photo_url %>">
+<img class="show-images" src="<%= @recipe.photo_url %>">
 <h3>Prep Time: <%=@recipe.prep_time %></h3>
 <h2>Ingredients:</h2>
 <ul>

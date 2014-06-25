@@ -1,8 +1,16 @@
 <h1>Welcome to Cookbook.ly! Here are the recipes:</h1>
-<% @recipes.each do |recipe| %>
-  
-  <h4><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a><span style="font-weight: normal;"> By: <%= recipe.author_initials %></span></h4>
-  <a data-confirm="Are you sure?" data-method="delete" href="<%= "/recipes/#{recipe.id}"%>" rel="nofollow">Destroy</a>
-  
-  
-<% end %>
+<div class="row">
+  <% @recipes.each do |recipe| %>
+
+    <div class="col-xs-6 col-md-3">
+      <a href="<%= "/recipes/#{recipe.id}"%>" class="thumbnail">
+        <img style="height: 160px; width:200px;" src="<%= recipe.photo_url %>">
+      </a>
+      <div class="caption">
+        <h3><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a><span style="font-weight: normal;"> By: <%= recipe.author_initials %></span></h3>
+        <p><a href="/recipes/<%=recipe.id%>/edit" class="btn btn-primary" role="button">Edit</a> <a data-confirm="Are you sure?" data-method="delete" href="<%= "/recipes/#{recipe.id}"%>" rel="nofollow" class="btn btn-default" role="button">Delete</a></p>
+      </div>
+    </div>
+    
+  <% end %>
+</div>

@@ -8,7 +8,6 @@ class Recipe < ActiveRecord::Base
   end
 
   def author_initials
-    # names = ["Bob", "Dole"]
     names = author.split(" ")
     initials = ""
     names.each do |name|

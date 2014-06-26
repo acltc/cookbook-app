@@ -1,6 +1,6 @@
 #main-navbar {
 
-  li {
+  li a {
     font-size: 20px;
   }
 
@@ -12,8 +12,9 @@
   #add-recipe-btn {
     color: white;
   }
+
   #add-recipe-btn:hover {
-    color: #5bc0d3;
+    background-color: #5bc0d3;
   }
 
 }

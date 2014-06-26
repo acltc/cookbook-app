@@ -5,7 +5,11 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find_by(:id => params[:id])
+    if @recipe.nil?
+      flash[:danger] = "Recipe cannot be found."
+      redirect_to '/recipes'
+    end
   end
 
   def new
@@ -34,7 +38,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    flash[:danger] = "Recipe deleted."
+    flash[:warning] = "Recipe deleted."
     redirect_to "/recipes"
   end
 end

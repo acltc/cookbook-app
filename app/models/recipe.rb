@@ -1,4 +1,5 @@
 class Recipe < ActiveRecord::Base
+  #COMMENT!!
   def ingredient_list
     return ingredients.split(",")
   end

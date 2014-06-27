@@ -9,12 +9,14 @@
     font-size: 30px;
   }
 
-  #add-recipe-btn {
-    color: white;
+  #add-recipe-btn:hover {
+    background-color: #111111;
+    background-color: lighten(#5bc0d3, 5);
   }
 
-  #add-recipe-btn:hover {
-    background-color: darken(#5bc0d3, 5);
+  .nav-btn{
+    height: 60px;
+    margin: 5px;
   }
 
 }

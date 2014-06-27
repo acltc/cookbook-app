@@ -1,6 +1,14 @@
 class RecipesController < ApplicationController
+
   def index
     @recipes = Recipe.all
+    if params[:sort] == "prep_time"
+      @recipes = @recipes.order(:prep_time)
+    elsif params[:sort] == "recent"
+      @recipes = @recipes.order(:created_at => :desc)
+    elsif params[:quick_fix] == "true"
+      @recipes = @recipes.order(:prep_time).limit(5)
+    end
     @title = "Recipes"
   end
 

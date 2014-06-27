@@ -7,8 +7,15 @@
         <img style="height: 160px; width:200px;" src="<%= recipe.photo_url %>">
       </a>
       <div class="caption">
-        <h3><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a><div class="author-name"> By: <%= recipe.author_initials %></div></h3>
-        <p><a href="/recipes/<%=recipe.id%>/edit" class="btn btn-primary" role="button">Edit</a> <a data-confirm="Are you sure?" data-method="delete" href="<%= "/recipes/#{recipe.id}"%>" rel="nofollow" class="btn btn-default" role="button">Delete</a></p>
+        <h3>
+          <a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a>
+          <div class="author-name"> By: <%= recipe.author_initials %>, Time: <%= recipe.prep_time %> Minutes
+          </div>
+        </h3>
+        <p>
+          <a href="/recipes/<%=recipe.id%>/edit" class="btn btn-primary" role="button">Edit</a>
+          <a data-confirm="Are you sure?" data-method="delete" href="<%= "/recipes/#{recipe.id}"%>" rel="nofollow" class="btn btn-default" role="button">Delete</a>
+        </p>
       </div>
     </div>
     

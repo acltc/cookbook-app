@@ -14,6 +14,9 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find_by(:id => params[:id])
+    if params[:id] == "random"
+      @recipe = Recipe.all.sample
+    end
     if @recipe.nil?
       flash[:danger] = "Recipe cannot be found."
       redirect_to '/recipes'

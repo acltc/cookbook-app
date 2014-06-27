@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
-  #COMMENT!!
+
   def ingredient_list
     return ingredients.split(",")
   end
@@ -23,6 +23,23 @@ class Recipe < ActiveRecord::Base
 
   def friendly_updated_at
     return updated_at.strftime("%b %d, %Y")
+  end
+
+  def friendly_prep_time
+    message = ""
+    hours = prep_time / 60
+    if hours == 1
+      message = message + "#{hours} hour "
+    elsif hours > 0
+      message = message + "#{hours} hours "
+    end
+    minutes = prep_time % 60
+    if minutes == 1
+      message = message + "#{minutes} minute"
+    elsif minutes > 0
+      message = message + "#{minutes} minutes"
+    end
+    return message
   end
 
 end
